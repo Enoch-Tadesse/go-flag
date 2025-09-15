@@ -27,16 +27,17 @@ type SegmentRule struct {
 type ISegmentUsecase interface {
 	CreateSegment(segment *Segment) error
 	GetAllSegments() ([]Segment, error)
-	GetSegment(name string) (*Segment, error)
+	GetSegment(id string) (*Segment, error)
 	AddRule(name string, rule *SegmentRule) error
-	DeleteSegment(name string) error
+	DeleteSegment(id string) error
+	DeleteRule(id string) error
 }
 
 type ISegmentRepository interface {
 	Create(segment *Segment) error
 	GetAll() ([]Segment, error)
-	GetByName(name string) (*Segment, error)
-	AddRule(segmentName string, rule *SegmentRule) error
+	GetByID(id string) (*Segment, error)
+	AppendRule(segmentName string, rule *SegmentRule) error
+	DeleteSegment(id string) error
 	RemoveRule(segmentName string, rule *SegmentRule) error
-	Delete(name string) error
 }
