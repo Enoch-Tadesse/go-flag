@@ -9,6 +9,11 @@ type SegmentUsecase struct {
 	repo domain.ISegmentRepository
 }
 
+// DeleteRule implements domain.ISegmentUsecase.
+func (s *SegmentUsecase) DeleteRule(id string) error {
+	panic("unimplemented")
+}
+
 // AddRule implements domain.ISegmentUsecase.
 func (s *SegmentUsecase) AddRule(name string, rule *domain.SegmentRule) error {
 	panic("unimplemented")
@@ -30,7 +35,7 @@ func (s *SegmentUsecase) GetAllSegments() ([]domain.Segment, error) {
 }
 
 // GetSegment implements domain.ISegmentUsecase.
-func (s *SegmentUsecase) GetSegment(name string) (*domain.Segment, error) {
+func (s *SegmentUsecase) GetSegment(id string) (*domain.Segment, error) {
 	panic("unimplemented")
 }
 
